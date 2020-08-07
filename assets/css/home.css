@@ -1,0 +1,21 @@
+body{
+    
+    background-color: azure; 
+    font: 1em sans-serif;
+    text-align: center;
+}
+
+#idForHeading{
+    text-align: center;
+}
+
+
+
+#ToDo-App-container{
+    border-radius: 40px;
+    background-color: beige;
+    margin: 25px;
+    margin-left: 400px;
+    margin-right: 400px;
+
+}

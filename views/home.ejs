@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <title>
+            <%= title%>
+        </title>
+
+
+        <!-- bootstrap link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+        <!-- font awesome link -->
+        <script src="https://kit.fontawesome.com/150b70503b.js" crossorigin="anonymous"></script>
+
+
+        <!-- css link should be below all other sytling link -->
+        <link rel="stylesheet" href="/css/home.css">
+
+
+    </head>
+    <body>
+
+        <div id = "ToDo-App-container">
+            <div id = "idForHeading">
+                <h1>
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    TODO app
+                </h1>
+            </div>
+            <div>
+                <form id = "new-form" action="/make-app" method = "POST">
+
+                    <div>
+                        <label for="describe"><h3>DESCRIPTION</h3></label>
+                    <input type="text" name="description" id="describe" placeholder="what do you need to do?" required>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+
+                        <div class="col">
+                            <label for="chooseOne"><h3>CATEGORY</h3></label>
+                            <select id="chooseOne" name="category" required >
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="School">School</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="col">
+                            <label for="fillDate"><h3>DUE DATE</h3></label>
+                            <input type="date" name="date" id="fillDate" required>
+                        </div>
+
+                        </div>
+                    </div>
+
+                    <div>    
+                        <button type="subnit" class="btn btn-success">ADD TASK</button>
+                        <button type="button" class="btn btn-danger">DELETE TASK</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <!-- to show data on page -->
+            </div>
+        </div>
+
+      
+
+        <!-- javascript link -->
+        <script type = "text/javascript" src = "/js/home.js"></script>
+
+
+        <!-- bootstrap javascript link -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    </body>
+</html>
