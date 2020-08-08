@@ -9,7 +9,16 @@ body{
     text-align: center;
 }
 
+ul {
+    list-style-type:none;
+}
 
+#show{
+    border:2px dotted cornsilk;
+    border-radius: 25px;
+    bottom: 5mm;
+    margin-bottom: 5mm;
+}
 
 #ToDo-App-container{
     border-radius: 40px;

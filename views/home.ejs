@@ -27,53 +27,83 @@
     <body>
 
         <div id = "ToDo-App-container">
+
+            <!-- Heading Section -->
             <div id = "idForHeading">
                 <h1>
                     <i class="fa fa-list-alt" aria-hidden="true"></i>
-                    TODO app
+                    TODO App
                 </h1>
             </div>
+
+            <!-- Form Section -->
             <div>
                 <form id = "new-form" action="/make-app" method = "POST">
 
                     <div>
                         <label for="describe"><h3>DESCRIPTION</h3></label>
-                    <input type="text" name="description" id="describe" placeholder="what do you need to do?" required>
+                        <input type="text" name="description" id="describe" placeholder="what do you need to do?" required>
                     </div>
 
                     <div class="container">
                         <div class="row">
 
-                        <div class="col">
-                            <label for="chooseOne"><h3>CATEGORY</h3></label>
-                            <select id="chooseOne" name="category" required >
-                            <option value="Personal">Personal</option>
-                            <option value="Work">Work</option>
-                            <option value="School">School</option>
-                            <option value="Cleaning">Cleaning</option>
-                            <option value="Other">Other</option>
-                            </select>
-                        </div>
+                            <div class="col">
+                                <label for="chooseOne"><h3>CATEGORY</h3></label>
+                                <select id="chooseOne" name="category" required >
+                                <option value="Personal">Personal</option>
+                                <option value="Work">Work</option>
+                                <option value="School">School</option>
+                                <option value="Cleaning">Cleaning</option>
+                                <option value="Other">Other</option>
+                                </select>
+                            </div>
 
-                        <div class="col">
-                            <label for="fillDate"><h3>DUE DATE</h3></label>
-                            <input type="date" name="date" id="fillDate" required>
-                        </div>
+                            <div class="col">
+                                <label for="fillDate"><h3>DUE DATE</h3></label>
+                                <input type="date" name="date" id="fillDate" required>
+                            </div>
 
                         </div>
                     </div>
 
                     <div>    
                         <button type="subnit" class="btn btn-success">ADD TASK</button>
-                        <button type="button" class="btn btn-danger">DELETE TASK</button>
                     </div>
                 </form>
             </div>
-            <div>
-                <!-- to show data on page -->
+
+            <!-- To show data on page -->
+
+            <div id = "show">
+                <ul>
+                    <% for (let i of ToDo_List){%> 
+                        <li>
+                            <h2><i class="fab fa-mastodon"></i></h2>
+                            <div class = "container">
+                                <div class = "row">
+                                    <div class = "col">
+                                        <h2><%= i.description %></h2>
+                                        <h3><%= i.date %></h3>
+                                    </div>
+                                    <div class = "col">
+                                        <div class = "delete-button">
+                                            <a href = "/delete-contact/?id=<%= i._id %>">
+                                                <button type="button" class="btn btn-danger">DELETE TASK</button>
+                                            </a>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        
+                                        <button type="button" class="btn btn-info"><h3><%= i.category %></h3></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
             </div>
         </div>
-
       
 
         <!-- javascript link -->
